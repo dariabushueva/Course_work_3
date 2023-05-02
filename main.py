@@ -16,6 +16,9 @@ def main():
         unformat_date = date_time.date()
         format_date = unformat_date.strftime('%d.%m.%Y')
 
+        # описание операции
+        descr_operation = operation["description"]
+
         # счет\карта отправителя
         try:
             operation_from = encrypted_account(operation["from"])
@@ -25,7 +28,7 @@ def main():
         # счет\карта получателя
         operation_to = encrypted_account(operation["to"])
 
-        print(f'{format_date} {operation["description"]}\n'
+        print(f'{format_date} {descr_operation}\n'
               f'{operation_from} -> {operation_to}\n'
               f'{operation["operationAmount"]["amount"]} {operation["operationAmount"]["currency"]["name"]}\n')
 

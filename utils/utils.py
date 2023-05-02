@@ -23,7 +23,7 @@ def set_operation_dates(path):
             date_in_list = operation["date"]
             date_list.append(date_in_list)
     sorted_list = sorted(date_list)
-    last_dates = sorted_list[-6:-1][::-1]
+    last_dates = sorted_list[-5:][::-1]
     return last_dates
 
 
